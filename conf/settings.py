@@ -26,8 +26,8 @@ SECRET_KEY = '&a04mxls8^-a++yk7#%*&dmfi#@^tv*yu)s=(p**r392llc*f&'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "User",
-    "*",
+    "127.0.0.1",
+    "ramilbatin.pythonanywhere.com"
 ]
 
 
