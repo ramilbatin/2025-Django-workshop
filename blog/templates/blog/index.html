@@ -1,0 +1,7 @@
+<b>Hello World</b>
+<br />
+{% for post in posts %}
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.post | safe }}</p>
+    <br />
+{% endfor %}

@@ -1,0 +1,15 @@
+<b>List of names</b>
+<br />
+
+{% for instance in object_list %}
+    <a href="{% url 'profile' instance.id %}">
+        <li> {{instance.first_name}}</li>
+    </a>
+
+{% endfor %}
+
+<hr />
+
+{% for instance in object_list %}
+    <li>{{ instance }}</li>
+{% endfor %}

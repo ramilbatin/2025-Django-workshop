@@ -1,0 +1,48 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+
+    <h3 class="mb-4 text-primary">
+        <i class="bi bi-chat-left-text me-2"></i>
+        Guestbook Entries
+    </h3>
+
+    {% for obj in entries %}
+        <div class="card mb-4 shadow-sm border-0">
+            <div class="card-body">
+
+                <!-- Header -->
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                    <div class="text-muted small">
+                        <i class="bi bi-person-circle me-1"></i>
+                        {{ obj.owner.username|default:"Anonymous" }}
+                        &nbsp;•&nbsp;
+                        <i class="bi bi-clock me-1"></i>
+                        {{ obj.datetime_created|date:"Y-m-d H:i" }}
+                    </div>
+
+                    <a href="{% url 'guestbook:update' obj.id %}" 
+                       class="btn btn-sm btn-outline-primary">
+                        <i class="bi bi-pencil-square me-1"></i>
+                        Edit
+                    </a>
+                </div>
+
+                <!-- Message -->
+                <p class="card-text mt-3">
+                    {{ obj.message }}
+                </p>
+
+            </div>
+        </div>
+    {% empty %}
+        <div class="alert alert-info text-center">
+            <i class="bi bi-info-circle me-1"></i>
+            No guestbook entries yet.
+        </div>
+    {% endfor %}
+
+</div>
+{% endblock %}

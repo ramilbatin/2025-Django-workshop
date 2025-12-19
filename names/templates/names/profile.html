@@ -1,0 +1,17 @@
+<title> Raffle System - Profile - {{ Person }}</title>
+
+<body>
+    <table>
+        <tr>
+            <td>First name</td> <td>{{person.first_name}}</td>
+        </tr>
+        <tr>
+            <td>Middle name</td> <td>{{person.middle_name | default:"False or None"}}</td>
+            
+            <td>Middle name</td> <td>{{person.middle_name | default_if_none:"no data"}}</td>
+        </tr>
+        <tr>
+            <td> Last name</td>  <td>{{person.last_name}}</td>
+        </tr>
+    </table>
+</body>
